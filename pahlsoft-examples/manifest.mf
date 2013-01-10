@@ -1,0 +1,6 @@
+Built-By: Anthony J Pahl
+Implementation-Version: 1.0
+Main-Class: com.jpmc.ctrbs.ice.util.filewatcher.FileWatcher
+Class-Path: 
+ ojdbc14.jar
+ 

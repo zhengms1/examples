@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esds>
+	<context>
+		<UNID>J0040636000918150097714960575200</UNID>
+		<SOURCESERVER>esdsportal-dev.jpmchase.net</SOURCESERVER>
+		<CBDACFID />
+		<CBDBCNUMBER />
+		<CBDBUILDING />
+		<CBDCITY>COLUMBUS</CBDCITY>
+		<CBDCOMPANYID>001</CBDCOMPANYID>
+		<CBDCOSTCENTER>281198</CBDCOSTCENTER>
+		<CBDDEPT>ARCHIVES/MIS</CBDDEPT>
+		<CBDEMAIL>anthony.j.pahl@jpmchase.com</CBDEMAIL>
+		<CBDFAXNUMBER />
+		<CBDFIRSTNAME>ANTHONY</CBDFIRSTNAME>
+		<CBDLASTNAME>PAHL</CBDLASTNAME>
+		<CBDFULLNAME>ANTHONY J PAHL</CBDFULLNAME>
+		<OVERRIDEFULLNAME>ANTHONY J PAHL</OVERRIDEFULLNAME>
+		<CBDINITIALS>J</CBDINITIALS>
+		<CBDINTERNALZIP>OH1-0630</CBDINTERNALZIP>
+		<OVERRIDEINTERNALZIP>OH1-0630</OVERRIDEINTERNALZIP>
+		<CBDJOBCODE>IT0036 </CBDJOBCODE>
+		<CBDMANAGER>PHILIP T MOMBURG</CBDMANAGER>
+		<CBDMANAGEREMAIL>philip.t.momburg@jpmchase.com</CBDMANAGEREMAIL>
+		<CBDPHONE>+16142134655</CBDPHONE>
+		<OVERRIDEPHONE>+16142134655</OVERRIDEPHONE>
+		<CBDSTATE>OH</CBDSTATE>
+		<CBDADDRESS>1111 POLARIS PARKWAY</CBDADDRESS>
+		<CBDUSER>j004063</CBDUSER>
+		<CBDBCZIP>432402050</CBDBCZIP>
+		<CBDLDAPGROUPS>cn=eidrs-sptgrp-0694,ou=EPV,ou=GTI,ou=Groups,dc=bankone,dc=net^cn=eidrs-sptgrp-0723,ou=EPV,ou=GTI,ou=Groups,dc=bankone,dc=net^cn=eidrs-sptgrp-0889,ou=EPV,ou=GTI,ou=Groups,dc=bankone,dc=net^cn=eidrs-sptgrp-1069,ou=EPV,ou=GTI,ou=Groups,dc=bankone,dc=net^cn=eidrs-sptgrp-1873,ou=EPV,ou=GTI,ou=Groups,dc=bankone,dc=net^cn=AllUsers,ou=EPV,ou=GTI,ou=Groups,dc=bankone,dc=net^cn=CTO_ESDS_PORTAL_ADMIN,ou=ESDS,ou=CTO,ou=Groups,dc=bankone,dc=net
+		</CBDLDAPGROUPS>
+		<CBDPROFILE>Default</CBDPROFILE>
+		<BANKINGCENTER>0</BANKINGCENTER>
+		<EDIT_ACCESS />
+		<FORM />
+		<ESDSGCSESSION />
+		<ORIGINALIP />
+		<VIEW_ACCESS />
+		<DATETIME>5/26/2011 4:28:51 PM</DATETIME>
+		<CBDNMLSID />
+		<CBDNMLSTATUS />
+	</context>
+	<security>
+		<roles>
+			<role name="cn=CTO_ESDS_PORTAL_ADMIN,ou=ESDS,ou=CTO,ou=Groups,dc=bankone,dc=net" />
+		</roles>
+		<entitlements permitted="escalate_request|request_assistance">
+			<entitlement auth="permit" name="escalate_request" />
+			<entitlement auth="permit" name="request_assistance" />
+		</entitlements>
+	</security>
+</esds>

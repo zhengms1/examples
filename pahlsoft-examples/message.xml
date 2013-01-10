@@ -1,0 +1,46 @@
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://xml.apache.org/xml-soap/literalxml"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://rsi.chase.com/model">
+	<SOAP-ENV:Body>
+		<sampleEcho>
+			<RequestContext>
+				<Credential>blabla</Credential>
+				<MessageID>67808865</MessageID>
+				<StartSequenceNumber>1</StartSequenceNumber>
+				<FulfillmentType>P</FulfillmentType>
+				<ReplyRequestedInd>true</ReplyRequestedInd>
+				<TraceID>0616848</TraceID>
+				<CustomerID />
+				<MarketSegment>001</MarketSegment>
+				<Timestamp>2005-01-14T14:18:07.891-05:00
+				</Timestamp>
+				<ContactID />
+				<SourceAuditInfo>
+					<BankerInfo>
+						<BankerName>RSI Developer</BankerName>
+						<PhoneNumber Type="PRIMARY">
+							<Number>6142132866</Number>
+						</PhoneNumber>
+					</BankerInfo>
+					<BankNumber>602</BankNumber>
+					<BankingCenterNumber>0148</BankingCenterNumber>
+					<ChannelID>RSI</ChannelID>
+					<Location>B</Location>
+					<SubLocation>UT1-7038</SubLocation>
+					<LoginID>V027049</LoginID>
+				</SourceAuditInfo>
+				<DestinationInfo>
+					<BankNumber>602</BankNumber>
+					<BankingCenterNumber>134</BankingCenterNumber>
+					<Environment>A</Environment>
+				</DestinationInfo>
+			</RequestContext>
+			<ServiceRequest Version="1.0" xsi:type="SampleEchoRequest"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+				<BrokerInfo>
+					<Name>Zeus</Name>
+				</BrokerInfo>
+			</ServiceRequest>
+		</sampleEcho>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

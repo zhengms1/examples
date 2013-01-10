@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project basedir="." default="build" name="Sample Project Builder">
+
+    	<condition property="isWindows7">
+    		<os name="Windows 7" />
+    	</condition>
+
+	<!--If File Exists then add a property --> 
+	<available property="common.java.jvm"
+	value="C:\Program Files\IBM\SDP70\runtimes\base_v61\java\bin\java.exe"
+	file="C:\Program Files\IBM\SDP70\runtimes\base_v61\java\bin\java.exe"
+	type="file" />
+	          <available property="common.javac.exe"
+	value="C:\Program Files\IBM\SDP70\runtimes\base_v61\java\bin\javac.exe"
+	file="C:\Program Files\IBM\SDP70\runtimes\base_v61\java\bin\javac.exe"
+	type="file" />
+	          <available property="common.java.jvm"
+	value="C:\Program Files (x86)\IBM\SDP\runtimes\base_v61\java\bin\java.exe"
+	file="C:\Program Files (x86)\IBM\SDP\runtimes\base_v61\java\bin\java.exe"
+	type="file" />
+	          <available property="common.javac.exe"
+	value="C:\Program Files (x86)\IBM\SDP\runtimes\base_v61\java\bin\javac.exe"
+	file="C:\Program Files (x86)\IBM\SDP\runtimes\base_v61\java\bin\javac.exe"
+	type="file" />
+	
+    <target name="create_run_jar" if="isWindows7">
+    	<echo message="Found Win7 Operating System" />
+        <jar destfile="C:/Users/aj_pahl/Desktop/EARWARJAR/AntTest.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="com.pahlsoft.examples.ant.HelloAnt"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="C:/Users/aj_pahl/workspace/AntTest/bin"/>
+        </jar>
+    </target>
+
+	<property name="target" value="1.5" />
+	<property name="source" value="1.5" />
+	<property name="build" value="bin" />
+	<property name="dist" value="dist" />
+	<property name="lib" value="lib" />
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${build}" />
+	</target>
+
+	<path id="com.jpmc.ctrbs.ice.util.filewatcher.classpath">
+		<pathelement path="${lib}" />
+		<pathelement location="${lib}/ojdbc14.jar" />
+		
+	</path>
+
+	<target name="clean">
+		<delete dir="bin" />
+		<delete dir="dist" />
+	</target>
+
+	<target name="build">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<mkdir dir="bin" />
+		<javac debug="true" destdir="${build}" source="${source}" target="${source}">
+			<src path="src" />
+			<classpath refid="com.jpmc.ctrbs.ice.util.filewatcher.classpath" />
+		</javac>
+	</target>
+
+	<target name="dist" depends="build" description="generate the distribution">
+		<mkdir dir="${dist}" />
+
+		<jar manifest="manifest.mf" basedir="${build}" destfile="${dist}/FileWatcher.jar"
+			index="true" >
+			<zipfileset src="${lib}/ojdbc14.jar" />
+		</jar>
+		       		
+	</target>
+
+	
+	<target name="com.jpmc.ctrbs.ice.util.filewatcher">
+		<java classname="com.jpmc.ctrbs.ice.util.filewatcher" failonerror="true" fork="yes">
+			<classpath refid="com.jpmc.ctrbs.ice.util.filewatcher.classpath" />
+		</java>
+	</target>
+
+</project>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE business-rule-config SYSTEM "BizRuleConfig.dtd">
+<root>
+	<GenDataRequest xmlns="http://chase.com/ctrbs/bai/tools/gen/schemas">
+		<ruleId>get-ctx-view-data1</ruleId>
+		<viewId>generic</viewId>
+		<paramList>
+			<param name="filter_id" value="1" />
+			<param name="grp_level" value="1" />
+			<param name="raw_xml_source" value="true" />
+			<param name="selectedLOB" value="Retail" />
+			<param name="selectedLOB2" value="%" />
+			<param name="start_dt" value="10/01/2010 00:00:00" />
+			<param name="end_dt" value="10/01/2010 23:59:59" />
+			<param name="stat_range_type_cd" value="D" />
+			<param name="view_type" value="SYSTEM_METRIC" />
+		</paramList>
+	</GenDataRequest>
+	<GenDataRequest xmlns="http://chase.com/ctrbs/bai/tools/gen/schemas">
+		<ruleId>get-ctx-view-data2</ruleId>
+		<viewId>generic</viewId>
+		<paramList>
+			<param name="filter_id" value="1" />
+			<param name="grp_level" value="1" />
+			<param name="raw_xml_source" value="true" />
+			<param name="selectedLOB" value="Retail" />
+			<param name="selectedLOB2" value="%" />
+			<param name="start_dt" value="10/01/2010 00:00:00" />
+			<param name="end_dt" value="10/01/2010 23:59:59" />
+			<param name="stat_range_type_cd" value="D" />
+			<param name="view_type" value="SYSTEM_METRIC" />
+		</paramList>
+	</GenDataRequest>
+</root>
