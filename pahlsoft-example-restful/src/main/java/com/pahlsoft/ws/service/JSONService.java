@@ -24,8 +24,6 @@ public class JSONService {
 		return output;
 	}
 	
-	
-	
 	@GET
 	@Path("/get/{param}")
 	@Produces("application/json")
