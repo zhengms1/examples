@@ -160,7 +160,7 @@ public class S3Sample {
             System.out.println("Caught an AmazonClientException, which means the client encountered "
                     + "a serious internal problem while trying to communicate with S3, "
                     + "such as not being able to access the network.");
-            System.out.println("Error Message: " + ace.getMessage());
+            System.out.println("Error Messages: " + ace.getMessage());
         }
     }
 
