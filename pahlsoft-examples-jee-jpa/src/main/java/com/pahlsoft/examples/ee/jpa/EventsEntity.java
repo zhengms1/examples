@@ -11,6 +11,7 @@ public class EventsEntity {
     private String status;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "eventID", nullable = false, insertable = true, updatable = true)
     public short getEventId() {
         return eventId;
