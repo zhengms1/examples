@@ -19,11 +19,10 @@
         <class>com.pahlsoft.examples.ee.jpa.TaskResultEntity</class>
         <class>com.pahlsoft.examples.ee.jpa.TaskStatusEntity</class>
         <class>com.pahlsoft.examples.ee.jpa.TasksEntity</class>
+
         <properties>
-            <property name="openjpa.ConnectionURL" value="jdbc:mysql://localhost:3306/megaevent"/>
-            <property name="openjpa.ConnectionDriverName" value="com.mysql.jdbc.Driver"/>
-            <property name="openjpa.ConnectionUserName" value="megaevent"/>
-            <property name="openjpa.ConnectionPassword" value="t0ena1ls"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:derby:memory:megaevent;create=true"/>
+            <property name="openjpa.ConnectionDriverName" value="org.apache.derby.jdbc.EmbeddedDriver"/>
             <property name="openjpa.Log" value="DefaultLevel=ERROR, Tool=ERROR"/>
         </properties>
     </persistence-unit>
