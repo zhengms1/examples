@@ -124,7 +124,7 @@ public class TasksEntity {
     }
 
     @Basic
-    @Column(name = "description", nullable = true, insertable = true, updatable = true, length = 2147483647)
+    @Column(name = "description", nullable = true, insertable = true, updatable = true, length = 32672)
     public String getDescription() {
         return description;
     }

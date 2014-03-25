@@ -22,7 +22,7 @@ public class EventsEntity {
     }
 
     @Basic
-    @Column(name = "title", nullable = false, insertable = true, updatable = true, length = 16777215)
+    @Column(name = "title", nullable = false, insertable = true, updatable = true, length = 32672)
     public String getTitle() {
         return title;
     }
@@ -32,7 +32,7 @@ public class EventsEntity {
     }
 
     @Basic
-    @Column(name = "description", nullable = false, insertable = true, updatable = true, length = 16777215)
+    @Column(name = "description", nullable = false, insertable = true, updatable = true, length = 32672)
     public String getDescription() {
         return description;
     }

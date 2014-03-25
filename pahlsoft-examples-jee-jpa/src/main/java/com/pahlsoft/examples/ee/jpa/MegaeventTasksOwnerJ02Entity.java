@@ -64,7 +64,7 @@ public class MegaeventTasksOwnerJ02Entity {
     }
 
     @Basic
-    @Column(name = "event_title", nullable = false, insertable = true, updatable = true, length = 16777215)
+    @Column(name = "event_title", nullable = false, insertable = true, updatable = true, length = 32672)
     public String getEventTitle() {
         return eventTitle;
     }
@@ -84,7 +84,7 @@ public class MegaeventTasksOwnerJ02Entity {
     }
 
     @Basic
-    @Column(name = "description", nullable = true, insertable = true, updatable = true, length = 2147483647)
+    @Column(name = "description", nullable = true, insertable = true, updatable = true, length = 32672)
     public String getDescription() {
         return description;
     }

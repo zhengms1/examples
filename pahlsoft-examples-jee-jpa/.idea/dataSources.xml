@@ -18,9 +18,7 @@
     <data-source source="LOCAL" name="TestPersistenceUnit" uuid="f0021dc1-a530-4e12-bf20-abde406f65ba">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/megaevent</jdbc-url>
-      <user-name>megaevent</user-name>
-      <user-password>dfdedf9adfcfdfc4dfcbdf9bdfc6dfd9</user-password>
+      <jdbc-url>jdbc:derby:memory:megaevent;create=true</jdbc-url>
       <libraries>
         <library>
           <url>file://C:\Users\aj\.m2\repository\mysql\mysql-connector-java\5.1.27\mysql-connector-java-5.1.27.jar</url>

@@ -21,6 +21,7 @@
         <class>com.pahlsoft.examples.ee.jpa.TasksEntity</class>
 
         <properties>
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
             <property name="openjpa.ConnectionURL" value="jdbc:derby:memory:megaevent;create=true"/>
             <property name="openjpa.ConnectionDriverName" value="org.apache.derby.jdbc.EmbeddedDriver"/>
             <property name="openjpa.Log" value="DefaultLevel=ERROR, Tool=ERROR"/>

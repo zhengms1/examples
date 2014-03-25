@@ -7,31 +7,18 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import java.io.BufferedReader;
-import java.io.FileReader;
 
 public class JPATest {
 
     EntityManagerFactory emf;
     EntityManager em;
     short eventNumber = 0;
-    String sqlScript;
 
     @BeforeClass
     public void init(){
         System.out.println("Initializing Tests...");
         emf = Persistence.createEntityManagerFactory("TestPersistenceUnit");
         em = emf.createEntityManager();
-
-        try {
-            sqlScript = readFile("src/main/config/create-database-derby.sql");
-        } catch (Exception e) {
-            System.out.println("Could not find sql file");
-        }
-        em.getTransaction().begin();
-        Query query = em.createNativeQuery(sqlScript);
-        query.executeUpdate();
-        em.getTransaction().commit();
 
     }
 
@@ -73,19 +60,4 @@ public class JPATest {
 
     }
 
-    private String readFile(String fileName) throws Exception {
-        BufferedReader br = new BufferedReader(new FileReader(fileName));
-        try {
-            StringBuilder sb = new StringBuilder();
-            String line = br.readLine();
-            while (line != null) {
-                sb.append(line);
-                sb.append("\n");
-                line = br.readLine();
-            }
-            return sb.toString();
-        } finally {
-            br.close();
-        }
-    }
 }
