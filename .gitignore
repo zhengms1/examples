@@ -1,2 +1,2 @@
-pahlsoft-examples-mongodb/target/classes/com/pahlsoft/mongodb/test/find/HomeWork2_2.class
-pahlsoft-examples-mongodb/target/classes/com/pahlsoft/mongodb/test/find/HomeWork3_1.class
+target/*
+.idea/*
