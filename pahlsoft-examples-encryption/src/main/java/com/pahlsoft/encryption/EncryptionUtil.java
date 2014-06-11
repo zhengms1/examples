@@ -1,7 +1,11 @@
 package com.pahlsoft.encryption;
 
-/**
- * Created by aj on 6/2/14.
- */
 public class EncryptionUtil {
+    public static byte[] encrypt(byte[] targetItem) {
+        return new byte[0];
+    }
+
+    public static byte[] decrypt(byte[] encryptedBytes) {
+        return new byte[0];
+    }
 }

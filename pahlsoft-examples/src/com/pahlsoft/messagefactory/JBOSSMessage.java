@@ -1,9 +1,8 @@
 package com.pahlsoft.messagefactory;
 
-import org.jboss.jms.client.JBossConnectionFactory;
 
 
-import javax.jms.*;
+/*import javax.jms.*;
 //import java.util.Random;
 
 public class JBOSSMessage implements MessageListener,SendMessage {
@@ -66,6 +65,6 @@ public class JBOSSMessage implements MessageListener,SendMessage {
             //Handle the exception appropriately DEBUG:AJP We'll need a debug statement from global
         	e.printStackTrace(); 
         }
-    }
+    }*/
   
-}
+//}

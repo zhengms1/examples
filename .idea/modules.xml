@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/examples.iml" filepath="$PROJECT_DIR$/.idea/examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pahlsoft-example-mapper/pahlsoft-example-mapper.iml" filepath="$PROJECT_DIR$/pahlsoft-example-mapper/pahlsoft-example-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples-encryption/pahlsoft-examples-encryption.iml" filepath="$PROJECT_DIR$/pahlsoft-examples-encryption/pahlsoft-examples-encryption.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples/pahlsoft-examples-main.iml" filepath="$PROJECT_DIR$/pahlsoft-examples/pahlsoft-examples-main.iml" />
       <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples-wol/pahlsoft-examples-wol.iml" filepath="$PROJECT_DIR$/pahlsoft-examples-wol/pahlsoft-examples-wol.iml" />
     </modules>
   </component>

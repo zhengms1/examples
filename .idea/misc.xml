@@ -3,6 +3,12 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file url="file://$PROJECT_DIR$/pahlsoft-examples/overlays" />
+    <file url="file://$PROJECT_DIR$/pahlsoft-examples/overlays" />
+    <file url="file://$PROJECT_DIR$/pahlsoft-examples/overlays" />
+    <file type="web" url="file://$PROJECT_DIR$/pahlsoft-examples" />
+  </component>
   <component name="GroovyCompilerProjectConfiguration">
     <excludes>
       <directory url="file://C:/Program Files (x86)/Groovy/Groovy-2.2.1" includeSubdirectories="true" />
@@ -13,6 +19,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pahlsoft-examples-wol/pom.xml" />
+        <option value="$PROJECT_DIR$/pahlsoft-example-mapper/pom.xml" />
+        <option value="$PROJECT_DIR$/pahlsoft-examples-encryption/pom.xml" />
+        <option value="$PROJECT_DIR$/pahlsoft-examples/pom.xml" />
       </list>
     </option>
   </component>
