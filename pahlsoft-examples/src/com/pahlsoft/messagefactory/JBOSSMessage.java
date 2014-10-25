@@ -4,7 +4,6 @@ import org.jboss.jms.client.JBossConnectionFactory;
 
 
 import javax.jms.*;
-//import java.util.Random;
 
 public class JBOSSMessage implements MessageListener,SendMessage {
     private static int ackMode;
