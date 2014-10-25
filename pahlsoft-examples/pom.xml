@@ -1,12 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+<<<<<<< HEAD
 	<groupId>iaas</groupId>
 	<artifactId>pahlsoft-examples</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>Pahlsoft Code Examples</name>
 	<build>
+=======
+	<groupId>pahlsoft-examples</groupId>
+	<artifactId>pahlsoft-examples-main</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>Pahlsoft Java and Generic Examples</name>
+    <build>
+>>>>>>> c908be1af9c7c1747410928d911be49cabb2db69
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -32,14 +41,6 @@
 					</execution>
 				</executions>
 
-				<configuration>
-					<generatePackage>com.pahlsoft.ws.iaas.generated</generatePackage>
-					<generateDirectory>src/main/java</generateDirectory>
-					<includeSchemas>
-						<includeSchema>**/*.xsd</includeSchema>
-					</includeSchemas>
-					<removeOldOutput>true</removeOldOutput>
-				</configuration>
 			</plugin>
 		</plugins>
 		<pluginManagement>
@@ -196,17 +197,22 @@
 			<artifactId>resteasy-jaxrs</artifactId>
 			<version>2.3.2.Final</version>
 		</dependency>
+<<<<<<< HEAD
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>itextpdf</artifactId>
             <version>5.0.6</version>
         </dependency>
+=======
+
+>>>>>>> c908be1af9c7c1747410928d911be49cabb2db69
         <dependency>
             <groupId>org.fluttercode.datafactory</groupId>
             <artifactId>datafactory</artifactId>
             <version>0.8</version>
         </dependency>
         <dependency>
+<<<<<<< HEAD
             <groupId>org.jdom</groupId>
             <artifactId>jdom</artifactId>
             <version>1.1.3</version>
@@ -238,6 +244,32 @@
             <artifactId>jboss-as-client</artifactId>
             <!--<type>pom</type>-->
             <version>5.0.1.GA</version>
+=======
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jdom</groupId>
+            <artifactId>jdom</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>apache-activemq</artifactId>
+            <version>5.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.as</groupId>
+            <artifactId>jboss-as-messaging</artifactId>
+            <version>7.2.0.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jboss</groupId>
+            <artifactId>jbossmq</artifactId>
+            <version>3.2.3</version>
+>>>>>>> c908be1af9c7c1747410928d911be49cabb2db69
         </dependency>
 
         <dependency>
@@ -246,5 +278,16 @@
             <version>1.4</version>
         </dependency>
 
+<<<<<<< HEAD
     </dependencies>
+=======
+        <dependency>
+            <groupId>org.perf4j</groupId>
+            <artifactId>perf4j</artifactId>
+            <version>0.9.16</version>
+
+        </dependency>
+
+	</dependencies>
+>>>>>>> c908be1af9c7c1747410928d911be49cabb2db69
 </project>

@@ -1,9 +1,13 @@
 package com.pahlsoft.messagefactory;
 
-import org.jboss.jms.client.JBossConnectionFactory;
 
 
+<<<<<<< HEAD
 import javax.jms.*;
+=======
+/*import javax.jms.*;
+//import java.util.Random;
+>>>>>>> c908be1af9c7c1747410928d911be49cabb2db69
 
 public class JBOSSMessage implements MessageListener,SendMessage {
     private static int ackMode;
@@ -65,6 +69,6 @@ public class JBOSSMessage implements MessageListener,SendMessage {
             //Handle the exception appropriately DEBUG:AJP We'll need a debug statement from global
         	e.printStackTrace(); 
         }
-    }
+    }*/
   
-}
+//}

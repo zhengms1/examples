@@ -1,0 +1,94 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="pahlsoft-javabatch:war exploded">
+    <output-path>$PROJECT_DIR$/target/pahlsoft-examples-javabatch-1.0-SNAPSHOT</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="pahlsoft-javabatch/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="pahlsoft-javabatch" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.core:arquillian-core-api:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.junit:arquillian-junit-container:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.junit:arquillian-junit-core:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.test:arquillian-test-spi:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.core:arquillian-core-spi:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.test:arquillian-test-api:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.container:arquillian-container-test-api:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.shrinkwrap:shrinkwrap-api:1.1.2" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.container:arquillian-container-test-spi:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.container:arquillian-container-spi:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.config:arquillian-config-api:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-api-base:2.0.0-alpha-3" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.config:arquillian-config-impl-base:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-spi:2.0.0-alpha-3" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.core:arquillian-core-impl-base:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.test:arquillian-test-impl-base:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.container:arquillian-container-impl-base:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.container:arquillian-container-test-impl-base:1.1.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.shrinkwrap:shrinkwrap-impl-base:1.1.2" />
+          <element id="library" level="project" name="Maven: org.jboss.shrinkwrap:shrinkwrap-spi:1.1.2" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-arquillian-container-embedded:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: javax.enterprise:cdi-api:1.1" />
+          <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-arquillian-common:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.testenricher:arquillian-testenricher-cdi:1.1.2.Final-wildfly-1" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.testenricher:arquillian-testenricher-ejb:1.1.2.Final-wildfly-1" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.testenricher:arquillian-testenricher-initialcontext:1.1.2.Final-wildfly-1" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.testenricher:arquillian-testenricher-osgi:2.1.0.CR2" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.testenricher:arquillian-testenricher-resource:1.1.2.Final-wildfly-1" />
+          <element id="library" level="project" name="Maven: org.jboss.arquillian.protocol:arquillian-protocol-servlet:1.1.2.Final-wildfly-1" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-arquillian-testenricher-msc:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-server:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-controller:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss:jboss-dmr:1.2.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-controller-client:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-protocol:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.1.4.GA" />
+          <element id="library" level="project" name="Maven: org.jboss.remoting:jboss-remoting:4.0.3.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.xnio:xnio-api:3.2.0.Beta4" />
+          <element id="library" level="project" name="Maven: org.jboss.sasl:jboss-sasl:1.0.4.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.threads:jboss-threads:2.1.1.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.xnio:xnio-nio:3.2.0.Beta4" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-build-config:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly.security:wildfly-security-manager:1.0.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-core-security:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-core-security-api:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.modules:jboss-modules:1.3.3.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.msc:jboss-msc:1.2.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.logmanager:jboss-logmanager:1.5.2.Final" />
+          <element id="library" level="project" name="Maven: org.jboss:staxmapper:1.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-domain-http-interface:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: io.undertow:undertow-core:1.0.15.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-domain-management:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss:jboss-common-core:2.2.22.GA" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-deployment-repository:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss:jboss-vfs:3.2.5.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-patching:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-cli:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.aesh:aesh:0.33.11" />
+          <element id="library" level="project" name="Maven: org.fusesource.jansi:jansi:1.9" />
+          <element id="library" level="project" name="Maven: org.jboss.remotingjmx:remoting-jmx:2.0.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.marshalling:jboss-marshalling:1.4.6.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.marshalling:jboss-marshalling-river:1.4.6.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-version:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-platform-mbean:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-process-controller:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-remoting:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-io:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-network:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss:jandex:1.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.invocation:jboss-invocation:1.2.1.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.stdio:jboss-stdio:1.0.2.GA" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-jmx:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.osgi:org.osgi.core:5.0.0" />
+          <element id="library" level="project" name="Maven: org.wildfly:wildfly-embedded:8.1.0.Final" />
+          <element id="library" level="project" name="Maven: junit:junit:4.11" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
+          <element id="library" level="project" name="Maven: javax:javaee-web-api:7.0" />
+          <element id="library" level="project" name="Maven: javax.batch:javax.batch-api:1.0" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

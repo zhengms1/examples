@@ -1,13 +1,11 @@
 package com.pahlsoft.generators;
 
-//import java.util.Date;
-
 import org.fluttercode.datafactory.impl.DataFactory;
 
 public class DataMaker {
-	
 	static final String PIPE = "|";
 	static final String COMMA = ",";
+    static final String SPACE = " ";
 
 	public static void main(String[] args) {
 		DataFactory df = new DataFactory();
@@ -15,7 +13,7 @@ public class DataMaker {
 		
 			String name =   df.getLastName() + COMMA + df.getFirstName() + PIPE 
 			              + df.getBirthDate() + PIPE + df.getAddress() + COMMA 
-			              + df.getCity() + " " + df.getBusinessName();
+			              + df.getCity() + SPACE + df.getBusinessName();
 			System.out.println(name);
 		}
 

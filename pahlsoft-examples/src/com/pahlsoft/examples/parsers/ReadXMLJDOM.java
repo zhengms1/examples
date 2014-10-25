@@ -13,7 +13,6 @@ import org.jdom.JDOMException;
 import org.jdom.Namespace;
 import org.jdom.adapters.XercesDOMAdapter;
 import org.jdom.input.DOMBuilder;
-//import org.jdom.xpath.XPath;
 
 public class ReadXMLJDOM {
 	private static DOMBuilder builder = null;
