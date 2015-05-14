@@ -25,6 +25,7 @@
         <option value="$PROJECT_DIR$/pahlsoft-example-mapper/pom.xml" />
         <option value="$PROJECT_DIR$/pahlsoft-examples-encryption/pom.xml" />
         <option value="$PROJECT_DIR$/pahlsoft-examples/pom.xml" />
+        <option value="$PROJECT_DIR$/pahlsoft-examples-messaging/pom.xml" />
       </list>
     </option>
   </component>
@@ -278,4 +279,3 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK" />
 </project>
-
