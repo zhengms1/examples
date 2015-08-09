@@ -11,6 +11,7 @@
     <file url="file://$PROJECT_DIR$/pahlsoft-examples/overlays" />
     <file url="file://$PROJECT_DIR$/pahlsoft-examples/overlays" />
     <file type="web" url="file://$PROJECT_DIR$/pahlsoft-examples" />
+    <file type="web" url="file://$PROJECT_DIR$/pahlsoft-examples-memcached" />
   </component>
   <component name="GroovyCompilerProjectConfiguration">
     <excludes>
@@ -26,6 +27,7 @@
         <option value="$PROJECT_DIR$/pahlsoft-examples-encryption/pom.xml" />
         <option value="$PROJECT_DIR$/pahlsoft-examples/pom.xml" />
         <option value="$PROJECT_DIR$/pahlsoft-examples-messaging/pom.xml" />
+        <option value="$PROJECT_DIR$/pahlsoft-examples-memcached/pom.xml" />
       </list>
     </option>
   </component>

@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/pahlsoft-example-mapper/pahlsoft-example-mapper.iml" filepath="$PROJECT_DIR$/pahlsoft-example-mapper/pahlsoft-example-mapper.iml" />
       <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples-encryption/pahlsoft-examples-encryption.iml" filepath="$PROJECT_DIR$/pahlsoft-examples-encryption/pahlsoft-examples-encryption.iml" />
       <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples/pahlsoft-examples-main.iml" filepath="$PROJECT_DIR$/pahlsoft-examples/pahlsoft-examples-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples-memcached/pahlsoft-examples-memcached.iml" filepath="$PROJECT_DIR$/pahlsoft-examples-memcached/pahlsoft-examples-memcached.iml" />
       <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples-messaging/pahlsoft-examples-messaging.iml" filepath="$PROJECT_DIR$/pahlsoft-examples-messaging/pahlsoft-examples-messaging.iml" />
       <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples-wol/pahlsoft-examples-wol.iml" filepath="$PROJECT_DIR$/pahlsoft-examples-wol/pahlsoft-examples-wol.iml" />
     </modules>
