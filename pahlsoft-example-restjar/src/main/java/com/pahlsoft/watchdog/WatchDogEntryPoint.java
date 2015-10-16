@@ -1,7 +1,7 @@
 package com.pahlsoft.watchdog;
 
-import com.pahlsoft.watchdog.gardposts.GeneralJavaPost;
-import com.pahlsoft.watchdog.gardposts.MemCachedPost;
+import com.pahlsoft.watchdog.guardposts.GeneralJavaPost;
+import com.pahlsoft.watchdog.guardposts.MemCachedPost;
 import org.json.JSONObject;
 
 import java.util.HashMap;

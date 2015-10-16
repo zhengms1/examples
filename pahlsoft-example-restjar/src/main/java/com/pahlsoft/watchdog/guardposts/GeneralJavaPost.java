@@ -1,4 +1,4 @@
-package com.pahlsoft.watchdog.gardposts;
+package com.pahlsoft.watchdog.guardposts;
 
 import com.pahlsoft.watchdog.utility.CommandLine;
 
