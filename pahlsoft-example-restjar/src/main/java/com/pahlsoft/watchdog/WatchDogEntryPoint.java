@@ -2,6 +2,7 @@ package com.pahlsoft.watchdog;
 
 import com.pahlsoft.watchdog.guardposts.GeneralJavaPost;
 import com.pahlsoft.watchdog.guardposts.MemCachedPost;
+import com.pahlsoft.watchdog.guardposts.MemoryPost;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -20,8 +21,9 @@ public class WatchDogEntryPoint {
     @Produces(MediaType.TEXT_PLAIN)
     public String all() {
         Map<String,String> map = new HashMap<String, String>();
-        map.put("MemCached Instances", MemCachedPost.getStatus());
-        map.put("General Java Process Count", GeneralJavaPost.getStatus());
+        map.put("MemCached Instances", MemCachedPost.execute());
+        map.put("General Java Process Count", GeneralJavaPost.execute());
+        map.put("Memory Stats", MemoryPost.execute());
         return toJson(map);
     }
 
@@ -29,15 +31,20 @@ public class WatchDogEntryPoint {
     @Path("memcached")
     @Produces(MediaType.TEXT_PLAIN)
     public String memcached() {
-        return toJson("MemCached Instances", MemCachedPost.getStatus());
+        return toJson("MemCached Instances", MemCachedPost.execute());
     }
 
     @GET
     @Path("java")
     @Produces(MediaType.TEXT_PLAIN)
     public String java() {
-        return toJson("General Java Process Count", GeneralJavaPost.getStatus());
+        return toJson("General Java Process Count", GeneralJavaPost.execute());
     }
+
+    @GET
+    @Path("memory")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String memory() { return toJson("Memory:", MemoryPost.execute());}
 
     private String toJson(String key, String value) {
         JSONObject obj = new JSONObject();
