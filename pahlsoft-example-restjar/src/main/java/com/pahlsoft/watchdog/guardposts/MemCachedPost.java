@@ -2,6 +2,8 @@ package com.pahlsoft.watchdog.guardposts;
 
 import com.pahlsoft.watchdog.utility.CommandLine;
 import org.apache.log4j.Logger;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class MemCachedPost  {
 
@@ -9,10 +11,11 @@ public class MemCachedPost  {
 
     private static final String statusScript = "ps -ef|grep memcached | grep -v grep | wc -l";
 
-    public static String execute() {
+    public static JSONArray execute() {
 
         LOG.info("Executing MemCached Post");
 
-        return CommandLine.execute(statusScript).get(0);
+        return CommandLine.execute(statusScript);
+
     }
 }

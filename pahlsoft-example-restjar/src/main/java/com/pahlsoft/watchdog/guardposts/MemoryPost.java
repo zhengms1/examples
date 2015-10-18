@@ -2,6 +2,7 @@ package com.pahlsoft.watchdog.guardposts;
 
 import com.pahlsoft.watchdog.utility.CommandLine;
 import org.apache.log4j.Logger;
+import org.json.JSONArray;
 
 public class MemoryPost {
 
@@ -9,10 +10,10 @@ public class MemoryPost {
 
     private static final String statusScript = "free -m  |grep Mem | awk '{print \"Assigned:\"$2,\",Used:\"$3, \",Free:\" $4}'";
 
-    public static String execute() {
+    public static JSONArray execute() {
 
         LOG.info("Executing Memory Used Post");
 
-        return CommandLine.execute(statusScript).get(0);
+        return CommandLine.execute(statusScript);
     }
 }

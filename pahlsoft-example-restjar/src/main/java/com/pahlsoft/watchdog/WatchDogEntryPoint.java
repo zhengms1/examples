@@ -1,17 +1,17 @@
 package com.pahlsoft.watchdog;
 
-import com.pahlsoft.watchdog.guardposts.GeneralJavaPost;
-import com.pahlsoft.watchdog.guardposts.MemCachedPost;
-import com.pahlsoft.watchdog.guardposts.MemoryPost;
+import com.google.gson.Gson;
+import com.pahlsoft.watchdog.guardposts.*;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.util.Map;
 
 @Path("/watchdog")
 public class WatchDogEntryPoint {
@@ -20,46 +20,61 @@ public class WatchDogEntryPoint {
     @Path("all")
     @Produces(MediaType.TEXT_PLAIN)
     public String all() {
-        Map<String,String> map = new HashMap<String, String>();
-        map.put("MemCached Instances", MemCachedPost.execute());
-        map.put("General Java Process Count", GeneralJavaPost.execute());
-        map.put("Memory Stats", MemoryPost.execute());
-        return toJson(map);
+
+        JSONObject jo = new JSONObject();
+        Collection<JSONObject> items = new ArrayList<JSONObject>();
+
+        JSONObject item1 = new JSONObject();
+        item1.put("HostName", HostName.execute());
+        items.add(item1);
+        JSONObject item2 = new JSONObject();
+        item2.put("Java Processes", JavaProcessesPost.execute());
+        items.add(item2);
+        JSONObject item3 = new JSONObject();
+        item3.put("General Java:", GeneralJavaPost.execute());
+        items.add(item3);
+        jo.put("WatchDogReport", new JSONArray().put(items));
+
+        return jo.toString();
     }
 
     @GET
     @Path("memcached")
     @Produces(MediaType.TEXT_PLAIN)
     public String memcached() {
-        return toJson("MemCached Instances", MemCachedPost.execute());
+        JSONObject jo = new JSONObject();
+        jo.put("Memcached", MemCachedPost.execute());
+        return jo.toString();
     }
 
     @GET
     @Path("java")
     @Produces(MediaType.TEXT_PLAIN)
     public String java() {
-        return toJson("General Java Process Count", GeneralJavaPost.execute());
+        JSONObject jo = new JSONObject();
+        jo.put("General Java", GeneralJavaPost.execute());
+        return jo.toString();
     }
 
     @GET
     @Path("memory")
     @Produces(MediaType.TEXT_PLAIN)
-    public String memory() { return toJson("Memory:", MemoryPost.execute());}
-
-    private String toJson(String key, String value) {
-        JSONObject obj = new JSONObject();
-        obj.put(key, value);
-        return obj.toString();
+    public String memory() {
+        JSONObject jo = new JSONObject();
+        jo.put("Memory Usage", MemoryPost.execute());
+        return jo.toString();
     }
 
-    private String toJson(Map map) {
-        JSONObject obj = new JSONObject();
-        Iterator entries = map.entrySet().iterator();
-        while (entries.hasNext()){
-            Map.Entry entry = (Map.Entry) entries.next();
-            obj.put((String)entry.getKey(),entry.getValue());
-        }
-        return obj.toString();
+    @GET
+    @Path("jps")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String jps() {
+        JSONObject jo = new JSONObject();
+        jo.put("Java Process List", JavaProcessesPost.execute());
+        return jo.toString();
+
     }
+
+
 
 }
