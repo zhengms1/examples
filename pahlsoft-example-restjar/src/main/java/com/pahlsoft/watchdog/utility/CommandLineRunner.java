@@ -7,9 +7,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class CommandLine {
-    public static JSONArray execute(String command) {
-
+public class CommandLineRunner {
+    public static JSONObject execute(String description, String command) {
+        JSONObject jsonObject = new JSONObject();
         JSONArray jsonArray = new JSONArray();
         String line = "";
         BufferedReader input = null;
@@ -32,6 +32,8 @@ public class CommandLine {
                 e.printStackTrace();
             }
         }
-        return jsonArray;
+
+        jsonObject.put(description, jsonArray);
+        return jsonObject;
     }
 }
