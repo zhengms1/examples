@@ -22,10 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="com.pahlsoft.examples.memcached" />
         <module name="iaas-reservation-service" />
         <module name="pahlsoft-example-generators" />
         <module name="pahlsoft-example-mapper" />
         <module name="pahlsoft-examples-encryption" />
+        <module name="pahlsoft-examples-generators" />
         <module name="pahlsoft-examples-main" />
         <module name="pahlsoft-examples-memcached" />
         <module name="pahlsoft-examples-messaging" />
@@ -41,10 +43,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.7">
+      <module name="com.pahlsoft.examples.memcached" target="1.5" />
       <module name="pahlsoft-example-generators" target="1.5" />
       <module name="pahlsoft-example-mapper" target="1.5" />
       <module name="pahlsoft-example-restjar" target="1.7" />
       <module name="pahlsoft-examples-encryption" target="1.5" />
+      <module name="pahlsoft-examples-generators" target="1.5" />
       <module name="pahlsoft-examples-main" target="1.5" />
       <module name="pahlsoft-examples-memcached" target="1.5" />
       <module name="pahlsoft-examples-messaging" target="1.5" />
