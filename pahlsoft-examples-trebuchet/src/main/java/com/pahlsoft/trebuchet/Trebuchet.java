@@ -40,7 +40,6 @@ public class Trebuchet {
                     TrebuchetClient tcSlave = new TrebuchetClient(serverName, counter);
                     tcSlave.send(Dialogue.SALUTATION);
                     Thread.sleep(1000);
-                    //tcSlave.send(Dialogue.TERMINATE);
                 }
                 trebuchetClient.send(Dialogue.TERMINATE);
 

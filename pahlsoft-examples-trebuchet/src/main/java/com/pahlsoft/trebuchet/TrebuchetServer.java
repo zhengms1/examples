@@ -36,17 +36,15 @@ public class TrebuchetServer implements Runnable {
             server = new ServerSocket(port);
             socket = server.accept();
 
-            System.out.println("Server: Waiting for client message...");
-
             ois = new ObjectInputStream(socket.getInputStream());
             oos = new ObjectOutputStream(socket.getOutputStream());
 
+            message = (Dialogue) ois.readObject();
             while (underMaxTime() && keepRunning) {
 
-                message = (Dialogue) ois.readObject();
                 switch (message) {
                     case SALUTATION:
-                        System.out.println("Server: Received Salutation : " + port);
+                        System.out.println("Server: Received Salutation on Port " + port);
                         oos.writeObject(Dialogue.SALUTATION);
                         break;
                     case TERMINATE:
@@ -67,6 +65,8 @@ public class TrebuchetServer implements Runnable {
                         break;
 
                 }
+                message = (Dialogue) ois.readObject();
+
             }
         } catch (SocketException se) {
             System.out.println("Server: Sockets Closed");

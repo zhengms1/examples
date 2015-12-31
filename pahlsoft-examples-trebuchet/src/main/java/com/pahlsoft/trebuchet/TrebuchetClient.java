@@ -4,10 +4,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.ConnectException;
-import java.net.InetAddress;
-import java.net.Socket;
-import java.net.UnknownHostException;
+import java.net.*;
 
 public class TrebuchetClient {
 
@@ -49,11 +46,13 @@ public class TrebuchetClient {
             oos.writeObject(portNumber);
             response = (Enum) ois.readObject();
         } catch (UnknownHostException e) {
-            e.printStackTrace();
+            System.out.println("Client: Unable to determine Host name " + server);
+        } catch (SocketException se ) {
+            System.out.println("Client: Unable to connect to host " + server);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Client: Unable to Send to host" + server);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Client: Bad Message");
         }
         return response;
     }
@@ -72,6 +71,7 @@ public class TrebuchetClient {
         } catch (ClassNotFoundException e) {
             System.out.println("Client: Class Not Found");
         }
+
         return response;
     }
 
