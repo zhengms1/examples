@@ -6,7 +6,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="" />
         <datasource-mapping>
-          <factory-entry name="PersistenceUnit" value="5b2cdf49-6c33-49a2-a25c-0ae2ac3b1c13" />
+          <factory-entry name="PersistenceUnit" value="3d8c2d5a-3768-49ca-9800-646ffe580146" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/pahlsoft-examples-jee-jpa/src/main/resources/META-INF/persistence.xml" />
       </configuration>

@@ -4,15 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples-memcached/com.pahlsoft.examples.memcached.iml" filepath="$PROJECT_DIR$/pahlsoft-examples-memcached/com.pahlsoft.examples.memcached.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/examples.iml" filepath="$PROJECT_DIR$/.idea/examples.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pahlsoft-example-generators/pahlsoft-example-generators.iml" filepath="$PROJECT_DIR$/pahlsoft-example-generators/pahlsoft-example-generators.iml" />
       <module fileurl="file://$PROJECT_DIR$/pahlsoft-example-mapper/pahlsoft-example-mapper.iml" filepath="$PROJECT_DIR$/pahlsoft-example-mapper/pahlsoft-example-mapper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pahlsoft-example-restjar/pahlsoft-example-restjar.iml" filepath="$PROJECT_DIR$/pahlsoft-example-restjar/pahlsoft-example-restjar.iml" />
       <module fileurl="file://$PROJECT_DIR$/pahlsoft-example-restjar/pahlsoft-example-restjar.iml" filepath="$PROJECT_DIR$/pahlsoft-example-restjar/pahlsoft-example-restjar.iml" />
       <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples-encryption/pahlsoft-examples-encryption.iml" filepath="$PROJECT_DIR$/pahlsoft-examples-encryption/pahlsoft-examples-encryption.iml" />
       <module fileurl="file://$PROJECT_DIR$/pahlsoft-example-generators/pahlsoft-examples-generators.iml" filepath="$PROJECT_DIR$/pahlsoft-example-generators/pahlsoft-examples-generators.iml" />
       <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples/pahlsoft-examples-main.iml" filepath="$PROJECT_DIR$/pahlsoft-examples/pahlsoft-examples-main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples-memcached/pahlsoft-examples-memcached.iml" filepath="$PROJECT_DIR$/pahlsoft-examples-memcached/pahlsoft-examples-memcached.iml" />
       <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples-messaging/pahlsoft-examples-messaging.iml" filepath="$PROJECT_DIR$/pahlsoft-examples-messaging/pahlsoft-examples-messaging.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples-trebuchet/pahlsoft-examples-trebuchet.iml" filepath="$PROJECT_DIR$/pahlsoft-examples-trebuchet/pahlsoft-examples-trebuchet.iml" />
       <module fileurl="file://$PROJECT_DIR$/pahlsoft-examples-wol/pahlsoft-examples-wol.iml" filepath="$PROJECT_DIR$/pahlsoft-examples-wol/pahlsoft-examples-wol.iml" />
     </modules>
   </component>
