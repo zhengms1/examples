@@ -1,5 +1,7 @@
 package com.pahlsoft.trebuchet;
 
+import org.apache.log4j.Logger;
+
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -13,6 +15,8 @@ public class TrebuchetClient {
     private static Socket socket;
     private static ObjectOutputStream oos = null;
     private static ObjectInputStream ois = null;
+    private static Logger LOG = Logger.getLogger(TrebuchetClient.class);
+
 
     public TrebuchetClient(String server, int port) {
         this.server = server;
@@ -26,14 +30,14 @@ public class TrebuchetClient {
             socket = new Socket(host, this.port);
 
             if (socket.isConnected()) {
-                System.out.println("Client: Connected to Server: " + this.server + " on Port: " + this.port);
+                LOG.info("Client: Connected to Server: " + this.server + " on Port: " + this.port);
             }
         } catch (ConnectException ce) {
-            System.out.println("Client: Failed to Connect to Server " + this.server + " on Port: " + this.port);
+            if (LOG.isDebugEnabled()) LOG.debug("Client: Failed to Connect to Server " + this.server + " on Port: " + this.port);
         } catch (UnknownHostException e) {
-            System.out.println("Client: unable to resolve host name or IP: " + this.server);
+            if (LOG.isDebugEnabled()) LOG.debug("Client: unable to resolve host name or IP: " + this.server);
         } catch (IOException e) {
-            e.printStackTrace();
+            if (LOG.isDebugEnabled()) e.printStackTrace();
         }
 
     }
@@ -46,13 +50,13 @@ public class TrebuchetClient {
             oos.writeObject(portNumber);
             response = (Enum) ois.readObject();
         } catch (UnknownHostException e) {
-            System.out.println("Client: Unable to determine Host name " + server);
+            if (LOG.isDebugEnabled()) LOG.debug("Client: Unable to determine Host name " + server);
         } catch (SocketException se ) {
-            System.out.println("Client: Unable to connect to host " + server);
+            if (LOG.isDebugEnabled()) LOG.debug("Client: Unable to connect to host " + server);
         } catch (IOException e) {
-            System.out.println("Client: Unable to Send to host" + server);
+            if (LOG.isDebugEnabled()) LOG.debug("Client: Unable to Send to host" + server);
         } catch (ClassNotFoundException e) {
-            System.out.println("Client: Bad Message");
+            if (LOG.isDebugEnabled()) LOG.debug("Client: Bad Message");
         }
         return response;
     }
@@ -64,12 +68,13 @@ public class TrebuchetClient {
             initStreams();
             oos.writeObject(message);
             response = (Enum) ois.readObject();
+            LOG.info("Client: Received Response: " + response.toString());
         } catch (UnknownHostException e) {
-            System.out.println("Client: Unknown Host Exception");
+            if (LOG.isDebugEnabled()) LOG.debug("Client: Unknown Host Exception");
         } catch (IOException e) {
-            System.out.println("Client: Unable to connect to server on port: " + port);
+            if (LOG.isDebugEnabled()) LOG.debug("Client: Unable to connect to server on port: " + port);
         } catch (ClassNotFoundException e) {
-            System.out.println("Client: Class Not Found");
+            if (LOG.isDebugEnabled()) LOG.debug("Client: Class Not Found");
         }
 
         return response;
@@ -86,12 +91,12 @@ public class TrebuchetClient {
                         socket.shutdownInput();
                         socket.close();
                 } catch (EOFException eof) {
-                    System.out.println("Client: Socket is already closed");
+                    if (LOG.isDebugEnabled()) LOG.debug("Client: Socket is already closed");
                 } catch (Exception e) {
-                    System.out.println("Client: Client is already disconnected");
+                    if (LOG.isDebugEnabled()) LOG.debug("Client: Client is already disconnected");
                 }
         } else {
-            System.out.println("Client: Client is disconnected");
+            if (LOG.isDebugEnabled()) LOG.debug("Client: Client is disconnected");
         }
     }
 
@@ -103,25 +108,9 @@ public class TrebuchetClient {
                 ois = new ObjectInputStream(socket.getInputStream());
             }
         } catch (IOException ioe) {
-            System.out.println("Client: Unable to Initialize Streams");
+            if (LOG.isDebugEnabled()) LOG.debug("Client: Unable to Initialize Streams");
         }
 
     }
 
-    public boolean isConnected() {
-        try {
-            if (ois != null) {
-                if (ois.read() == -1) {
-                    return false;
-
-                } else {
-                    return true;
-                }
-            } else {
-                return true;
-            }
-        } catch (Exception e) {
-            return false;
-        }
-    }
 }

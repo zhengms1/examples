@@ -1,10 +1,14 @@
 package com.pahlsoft.trebuchet;
 
+import org.apache.log4j.Logger;
+
 public class Trebuchet {
 
     private static int lowerRange;
     private static int upperRange;
     private static String serverName;
+    private static Logger LOG = Logger.getLogger(Trebuchet.class);
+
 
     public static void main(String[] args) {
         System.setProperty("java.net.preferIPv4Stack" , "true");
@@ -12,10 +16,11 @@ public class Trebuchet {
         try {
 
             if (args[0].contains("-S")) {
-                System.out.println("Starting Server on Port: " + args[0].split("-S")[1]);
+               LOG.info("Starting Server on Port: " + args[0].split("-S")[1]);
+
                 TrebuchetServer trebuchetServer = new TrebuchetServer(Integer.parseInt(args[0].split("-S")[1]));
             } else if (args[0].contains("-C")) {
-                System.out.println("Client Connecting to Server: " + args[0].split("-C")[1].split(":")[0]);
+                LOG.info("Client Connecting to Server: " + args[0].split("-C")[1].split(":")[0]);
                 serverName = args[0].split("-C")[1].split(":")[0];
                 TrebuchetClient trebuchetClient = new TrebuchetClient(args[0].split("-C")[1].split(":")[0],
                         Integer.parseInt(args[0].split("-C")[1].split(":")[1]));
@@ -25,12 +30,12 @@ public class Trebuchet {
 
 
                 if (args[1].contains("-p")) {
-                    System.out.println("Lower Port: " + args[1].split("-p")[1]);
+                    LOG.info("Lower Port: " + args[1].split("-p")[1]);
                     lowerRange = Integer.parseInt(args[1].split("-p")[1]);
                 }
 
                 if (args[2].contains("-P")) {
-                    System.out.println("Upper Port: " + args[2].split("-P")[1]);
+                    LOG.info("Upper Port: " + args[2].split("-P")[1]);
                     upperRange = Integer.parseInt(args[2].split("-P")[1]);
                 }
 
@@ -50,7 +55,7 @@ public class Trebuchet {
         } catch (ArrayIndexOutOfBoundsException aeob) {
             argumentError();
         } catch (InterruptedException ie) {
-            System.out.println("Interrupted");
+            if (LOG.isDebugEnabled()) LOG.info("Interrupted");
         }
 
     }
