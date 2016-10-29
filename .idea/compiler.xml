@@ -48,6 +48,20 @@
         <processorPath useClasspath="true" />
         <module name="pahlsoft-examples-trebuchet" />
       </profile>
+      <profile default="false" name="Annotation profile for pahlsoft-examples-java8" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="pahlsoft-examples-java8" />
+      </profile>
+      <profile default="false" name="Annotation profile for pahlsoft-examples-katas" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="pahlsoft-examples-katas" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="com.pahlsoft.examples.memcached" target="1.5" />
@@ -55,6 +69,8 @@
       <module name="pahlsoft-example-restjar" target="1.7" />
       <module name="pahlsoft-examples-encryption" target="1.5" />
       <module name="pahlsoft-examples-generators" target="1.5" />
+      <module name="pahlsoft-examples-java8" target="1.8" />
+      <module name="pahlsoft-examples-katas" target="1.8" />
       <module name="pahlsoft-examples-main" target="1.5" />
       <module name="pahlsoft-examples-messaging" target="1.5" />
       <module name="pahlsoft-examples-trebuchet" target="1.7" />

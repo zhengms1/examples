@@ -31,6 +31,8 @@
         <option value="$PROJECT_DIR$/pahlsoft-example-generators/pom.xml" />
         <option value="$PROJECT_DIR$/pahlsoft-example-restjar/pom.xml" />
         <option value="$PROJECT_DIR$/pahlsoft-examples-trebuchet/pom.xml" />
+        <option value="$PROJECT_DIR$/pahlsoft-examples-java8/pom.xml" />
+        <option value="$PROJECT_DIR$/pahlsoft-examples-katas/pom.xml" />
       </list>
     </option>
   </component>
