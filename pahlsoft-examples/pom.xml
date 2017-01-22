@@ -20,27 +20,27 @@
 					</webResources>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>com.sun.tools.xjc.maven2</groupId>
-				<artifactId>maven-jaxb-plugin</artifactId>
-				<version>1.1.1</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-					</execution>
-				</executions>
+			<!--<plugin>-->
+				<!--<groupId>com.sun.tools.xjc.maven2</groupId>-->
+				<!--<artifactId>maven-jaxb-plugin</artifactId>-->
+				<!--<version>1.1.1</version>-->
+				<!--<executions>-->
+					<!--<execution>-->
+						<!--<goals>-->
+							<!--<goal>generate</goal>-->
+						<!--</goals>-->
+					<!--</execution>-->
+				<!--</executions>-->
 
-				<configuration>
-					<generatePackage>com.pahlsoft.ws.iaas.generated</generatePackage>
-					<generateDirectory>src/main/java</generateDirectory>
-					<includeSchemas>
-						<includeSchema>**/*.xsd</includeSchema>
-					</includeSchemas>
-					<removeOldOutput>true</removeOldOutput>
-				</configuration>
-			</plugin>
+				<!--<configuration>-->
+					<!--<generatePackage>com.pahlsoft.ws.iaas.generated</generatePackage>-->
+					<!--<generateDirectory>src/main/java</generateDirectory>-->
+					<!--<includeSchemas>-->
+						<!--<includeSchema>**/*.xsd</includeSchema>-->
+					<!--</includeSchemas>-->
+					<!--<removeOldOutput>true</removeOldOutput>-->
+				<!--</configuration>-->
+			<!--</plugin>-->
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -227,11 +227,6 @@
             <version>2.9.0</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>org.jboss.as</groupId>-->
-            <!--<artifactId>jboss-as-server</artifactId>-->
-            <!--<version>7.2.0.Final</version>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>org.jboss.jbossas</groupId>
@@ -239,7 +234,6 @@
             <!--<type>pom</type>-->
             <version>5.0.1.GA</version>
         </dependency>
-
 
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
