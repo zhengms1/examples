@@ -1,6 +1,10 @@
 package com.pahlsoft.messaging;
 
-public abstract interface SendMessage {
-	public void sendMessage(String destination, String queue, String message);
+import javax.jms.JMSException;
+
+public interface SendMessage {
+	void sendMessage(String message) throws JMSException;
+	void sendMessage(String message, String correlationId) throws JMSException;
+
 
 }
