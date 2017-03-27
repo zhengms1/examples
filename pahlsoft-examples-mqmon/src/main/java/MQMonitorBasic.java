@@ -50,7 +50,7 @@ public class MQMonitorBasic {
         return queue.getCurrentDepth();
     }
 
-    public int reportQueueDepth() {
+    public int getCurrentQueueDepth() {
         connect();
         int queueDepth = -1;
         try {
