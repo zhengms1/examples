@@ -21,7 +21,7 @@ public class MQMonitorBasic {
 
     public MQMonitorBasic(String environment) {
         try {
-            LOG.info("Loading Properites for " + environment);
+            LOG.info("Loading Properties for " + environment);
             loadProperties(environment);
             connectToQueueManager();
         } catch (Exception e) {
