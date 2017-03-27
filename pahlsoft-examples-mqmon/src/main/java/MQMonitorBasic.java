@@ -32,7 +32,6 @@ public class MQMonitorBasic {
 
     private void loadProperties(String environment) throws IOException {
         properties.load(MQMonitorBasic.class.getResourceAsStream("mq-monitor.properties"));
-        displayProperties();
         MQEnvironment.hostname = properties.getProperty(environment + ".hostName");
         MQEnvironment.port = Integer.parseInt(properties.getProperty(environment + ".port"));
         MQEnvironment.channel = properties.getProperty(environment + ".channelName");
@@ -61,14 +60,6 @@ public class MQMonitorBasic {
             LOG.error("MQ Connection Error. Reason Code: " + e.getReason());
         }
         return queueDepth;
-    }
-
-    private void displayProperties() {
-        Enumeration em = properties.keys();
-        while (em.hasMoreElements()) {
-            String key = (String) em.nextElement();
-            System.out.println(key + " = " + properties.get(key));
-        }
     }
 
     public int getMaxDepth() {

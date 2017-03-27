@@ -34,18 +34,20 @@ public class MQMonitorBasicTest {
     }
 
 
-//    @Test
-//    public void checkforEmptyQueue() {
-//        mqMonitorBasic.purgeQueue();
-//        Assert.assertEquals(0,mqMonitorBasic.reportQueueDepth());
-//    }
+    @Test
+    public void checkforEmptyQueue() {
+        mqMonitorBasic.purgeQueue();
+        Assert.assertEquals(0,mqMonitorBasic.reportQueueDepth());
+    }
 
-//    @Test
-//    public void checkForOneMessage() {
-//        mqMonitorBasic.sendMessage("UnitTest");
-//        Assert.assertEquals(1,mqMonitorBasic.reportQueueDepth());
-//    }
-//
+    @Test
+    public void checkForOneMessage() {
+        mqMonitorBasic.purgeQueue();
+        mqMonitorBasic.sendMessage("UnitTest");
+        Assert.assertEquals(1,mqMonitorBasic.reportQueueDepth());
+        mqMonitorBasic.purgeQueue();
+    }
+
     @Test
     public void checkMaxDepth() {
         Assert.assertEquals(5000,mqMonitorBasic.getMaxDepth());
