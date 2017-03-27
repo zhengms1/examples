@@ -40,6 +40,14 @@ public class MQMonitorBasic {
         queueManagerName = properties.getProperty(environment + ".queueManagerName");
     }
 
+    public String getQueueName() {
+        return queueName;
+    }
+
+    public String getQueueManagerName() {
+        return queueManagerName;
+    }
+
     private void connectToQueueManager() throws MQException {
         queueManager = new MQQueueManager(queueManagerName);
         if (queueManager.isConnected()) LOG.info("Connected: " + queueManager.getName());
@@ -132,4 +140,5 @@ public class MQMonitorBasic {
             e.printStackTrace();
         }
     }
+
 }

@@ -63,4 +63,5 @@ public class MQMonitorBasicTest {
         Assert.assertEquals(10, mqMonitorBasic.getCurrentQueueDepth());
         mqMonitorBasic.purgeQueue();
     }
+
 }
