@@ -4,29 +4,50 @@ import org.junit.Test;
 
 public class MQMonitorBasicTest {
 
-//    @Test
-//    public void purgeQueue() {
-//        MQMonitorBasic mqMonitorBasic = new MQMonitorBasic("dev");
-//        Assert.assertEquals(0,mqMonitorBasic.reportQueueDepth());
-//
-//    }
+    private static MQMonitorBasic mqMonitorBasic;
+
+    @Before
+    public void init() {
+       mqMonitorBasic = new MQMonitorBasic("dev");
+    }
+    @Test
+    public void sendMessage() {
+        int initialValue = mqMonitorBasic.reportQueueDepth();
+        mqMonitorBasic.sendMessage("Test 1");
+        int secondaryValue = mqMonitorBasic.reportQueueDepth();
+        Assert.assertTrue(initialValue<secondaryValue);
+    }
 
     @Test
-    public void checkforEmptyQueue() {
-        MQMonitorBasic mqMonitorBasic = new MQMonitorBasic("dev");
+    public void purgeQueue() {
+        mqMonitorBasic.purgeQueue();
         Assert.assertEquals(0,mqMonitorBasic.reportQueueDepth());
     }
 
     @Test
-    public void checkForOneMessage() {
-        MQMonitorBasic mqMonitorBasic = new MQMonitorBasic("dev");
-        mqMonitorBasic.sendMessage("UnitTest");
-        Assert.assertEquals(1,mqMonitorBasic.reportQueueDepth());
+    public void purgeQueue10() {
+        for (int i = 0; i<10; i++) {
+            mqMonitorBasic.sendMessage("Test "+ i);
+        }
+        mqMonitorBasic.purgeQueue();
+        Assert.assertEquals(0,mqMonitorBasic.reportQueueDepth());
     }
 
+
+//    @Test
+//    public void checkforEmptyQueue() {
+//        mqMonitorBasic.purgeQueue();
+//        Assert.assertEquals(0,mqMonitorBasic.reportQueueDepth());
+//    }
+
+//    @Test
+//    public void checkForOneMessage() {
+//        mqMonitorBasic.sendMessage("UnitTest");
+//        Assert.assertEquals(1,mqMonitorBasic.reportQueueDepth());
+//    }
+//
     @Test
     public void checkMaxDepth() {
-        MQMonitorBasic mqMonitorBasic = new MQMonitorBasic("dev");
         Assert.assertEquals(5000,mqMonitorBasic.getMaxDepth());
     }
 }

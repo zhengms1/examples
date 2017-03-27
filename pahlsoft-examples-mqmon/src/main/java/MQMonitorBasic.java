@@ -3,17 +3,19 @@ import com.ibm.mq.*;
 import com.ibm.mq.constants.CMQC;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Properties;
 
 public class MQMonitorBasic {
 
-private static int openOptions = CMQC.MQOO_INQUIRE + CMQC.MQOO_FAIL_IF_QUIESCING + CMQC.MQOO_INPUT_SHARED + CMQC.MQOO_OUTPUT
-                       + CMQC.MQGMO_NO_WAIT + CMQC.MQGMO_ACCEPT_TRUNCATED_MSG;
+    private static int openOptions = CMQC.MQOO_INQUIRE + CMQC.MQOO_FAIL_IF_QUIESCING + CMQC.MQOO_INPUT_SHARED + CMQC.MQOO_OUTPUT
+            + CMQC.MQGMO_NO_WAIT + CMQC.MQGMO_ACCEPT_TRUNCATED_MSG;
     private static Properties properties = new Properties();
     private static MQQueueManager queueManager;
     private static MQQueue queue;
+    private static MQMessage mqMessage;
     private static String queueName = "undefined";
     private static String queueManagerName = "undefined";
     private static Logger LOG = LoggerFactory.getLogger(MQMonitorBasic.class);
@@ -41,22 +43,18 @@ private static int openOptions = CMQC.MQOO_INQUIRE + CMQC.MQOO_FAIL_IF_QUIESCING
     }
 
     private void connectToQueueManager() throws MQException {
-        queueManager = new MQQueueManager( queueManagerName );
+        queueManager = new MQQueueManager(queueManagerName);
         if (queueManager.isConnected()) LOG.info("Connected: " + queueManager.getName());
     }
 
-    private static int checkQueueDepth() throws MQException {
-        queue = queueManager.accessQueue(queueName,openOptions);
+    private int checkQueueDepth() throws MQException {
+        connect();
         return queue.getCurrentDepth();
-  }
+    }
 
-  public void terminate() throws MQException {
-      queue.close();
-      queueManager.disconnect();
-  }
-
-    public static int reportQueueDepth() {
-        int queueDepth = -1 ;
+    public int reportQueueDepth() {
+        connect();
+        int queueDepth = -1;
         try {
             return checkQueueDepth();
         } catch (MQException e) {
@@ -65,15 +63,16 @@ private static int openOptions = CMQC.MQOO_INQUIRE + CMQC.MQOO_FAIL_IF_QUIESCING
         return queueDepth;
     }
 
-    private static void displayProperties() {
+    private void displayProperties() {
         Enumeration em = properties.keys();
         while (em.hasMoreElements()) {
-            String key=(String)em.nextElement();
+            String key = (String) em.nextElement();
             System.out.println(key + " = " + properties.get(key));
         }
     }
 
     public int getMaxDepth() {
+        connect();
         try {
             return queue.getMaximumDepth();
         } catch (MQException e) {
@@ -81,42 +80,66 @@ private static int openOptions = CMQC.MQOO_INQUIRE + CMQC.MQOO_FAIL_IF_QUIESCING
         }
         return -1;
     }
+
     public void sendMessage(String msg) {
-        MQMessage message = new MQMessage();
+        connect();
+        mqMessage = new MQMessage();
         try {
-            message.messageType = 8;
+            mqMessage.messageType = 8;
             try {
-                message.writeString(msg);
+                mqMessage.writeString(msg);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            queue.put(message);
+            queue.put(mqMessage);
         } catch (MQException e) {
             LOG.error("Error Sending Message. Reason Code: " + e.reasonCode);
         }
     }
-//    public void purgeQueue() {
-//        MQMessage message;
-//        try {
-//            while (queue.getCurrentDepth()>0) {
-//                message = new MQMessage();
-//                try {
-//                    queue.get(message);
-//                } catch (MQException e) {
-//                    if (e.completionCode == 1 && e.reasonCode == MQException.MQRC_TRUNCATED_MSG_ACCEPTED) {
-//                        LOG.info("Queue has been depleted");
-//                    } else {
-//                        if (e.completionCode == 2 && e.reasonCode == MQException.MQRC_NO_MSG_AVAILABLE) {
-//                            LOG.info("Queue has been depleted");
-//                        } else {
-//                            LOG.error("Error trying to purge Queue. Reason Code: " + e.reasonCode);
-//                        }
-//                    }
-//                }
-//            }
-//        } catch (MQException e) {
-//            LOG.error("Unable to determine queue Depth.");
-//        }
-//    }
 
+    public void purgeQueue() {
+        connect();
+        int depth = 0;
+        boolean stillHasMessages = true;
+        try {
+            depth = queue.getCurrentDepth();
+        } catch (MQException e) {
+            LOG.error("Unable to determine queue Depth.");
+        }
+        if (depth > 0) {
+            try {
+                while (stillHasMessages) {
+                    mqMessage = new MQMessage();
+                    try {
+                        queue.get(mqMessage);
+                    } catch (MQException e) {
+                        if (e.completionCode == 1 && e.reasonCode == MQException.MQRC_TRUNCATED_MSG_ACCEPTED) {
+                            LOG.info("Message was purged");
+                        } else {
+                            stillHasMessages = false;
+                            if (e.completionCode == 2 && e.reasonCode == MQException.MQRC_NO_MSG_AVAILABLE) {
+                                LOG.info("Queue has been depleted");
+                            } else {
+                                LOG.error("Error trying to purge Queue. Reason Code: " + e.reasonCode);
+                            }
+
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                LOG.error("Error processing purge request.");
+            }
+        } else {
+            LOG.info("No messages to purge.");
+        }
+    }
+
+    private void connect() {
+        try {
+            queueManager = new MQQueueManager(queueManagerName);
+            queue = queueManager.accessQueue(queueName, openOptions);
+        } catch (MQException e) {
+            e.printStackTrace();
+        }
+    }
 }
